@@ -10,6 +10,8 @@
 #LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
 #IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#!/usr/bin/env python
+
 import distutils.core
 import sys
 # Importing setuptools adds some features like "setup.py develop", but is optional so swallow the error if it's not there.
@@ -24,6 +26,6 @@ distutils.core.setup(name='funct',
       author='Ivan VenOsdel, Nathan Lundquist',
       author_email='',
       url='https://github.com/FrostyFire/funct',
-      packages=['distutils', 'distutils.command'],
       license="http://opensource.org/licenses/mit-license.php",
+      packages = ["funct"],
      )
