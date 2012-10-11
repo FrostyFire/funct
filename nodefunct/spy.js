@@ -59,7 +59,7 @@ function CallSpy()
                         return;
                     }
                 }
-                throw new assert.AssertionError(util.format('`%s` not found in `%s` call args', searchArg, methodName))
+                throw new assert.AssertionError({ message: util.format('`%s` not found in `%s` call args', searchArg, methodName) });
             }
         });
         this[util.format('$%s', methodName)] = spyMethodStats;
