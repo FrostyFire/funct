@@ -1,4 +1,5 @@
 import copy
+import json
 
 def create_function_spy(return_values=[], reverse=True):
     """Creates a function that is capable of tracking how it is used"""
@@ -166,16 +167,7 @@ class WebServiceSpy(object):
 
             if len(self.__responses) > 0:
                 response = self.__responses.pop(0)
-
-                #special case for headers
-                if 'headers' in response:
-                    self.__cherrypy.response.headers.update(response['headers'])
-                    del response['headers']
-
-                for attr in response:
-                    if hasattr(self.__cherrypy.response, attr):
-                        setattr(self.__cherrypy.response, attr, response[attr])
-                return self.__cherrypy.response.body
+                return json.dumps(response)
 
     default.exposed = True
 
